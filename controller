@@ -1,0 +1,18 @@
+ public ActionResult SystemController()
+        {
+            var data = new List<object>();
+
+            // Retrieve data from request parameters
+            
+            var FrstName = Request["FrstName"];
+            
+            var Balance = Request["Balance"];
+            
+            data.Add(new
+            {
+                mess = 0, 
+                mess1 = "Mr./Ms. " + FrstName + ", you have successfully paid. Your balance is " + Balance
+
+            });
+                return Json(data, JsonRequestBehavior.AllowGet);
+          }
